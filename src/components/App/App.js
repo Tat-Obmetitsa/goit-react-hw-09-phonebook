@@ -28,7 +28,7 @@ export default function App () {
 
       <Suspense fallback={<p className={s.loading}>Loading...</p>}>
         <Switch>
-          <PublicRoute exact path={routes.home} component={HomeView} />
+          <PublicRoute exact path={routes.home}> <HomeView /> </PublicRoute>
           <PublicRoute
             path={routes.register}
             restricted
@@ -39,13 +39,14 @@ export default function App () {
             path={routes.login}
             restricted
             redirectTo={routes.contacts}
-            component={LoginView}
-          />
+          >
+            <LoginView />
+          </PublicRoute>
           <PrivateRoute
             path={routes.contacts}
-            redirectTo={routes.login}
-            component={ContactsView}
-          />
+            redirectTo={routes.login}>
+            <ContactsView />
+          </PrivateRoute>
         </Switch>
       </Suspense>
     </Container>
