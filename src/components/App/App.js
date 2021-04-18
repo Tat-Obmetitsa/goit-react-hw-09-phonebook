@@ -5,7 +5,6 @@ import Container from '../Container';
 import AppBar from '../AppBar/AppBar.js';
 import {routes} from '../../routes';
 import { authOperations } from '../../redux/auth';
-// import { connect } from 'react-redux';
 import PrivateRoute from '../PrivateRoute';
 import PublicRoute from '../PublicRoute';
 import s from '../Container/Container.module.css';
