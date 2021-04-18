@@ -52,7 +52,6 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://tat-obmetitsa.github.io/goit-react-hw-09-phonebook",
   "devDependencies": {
     "husky": "^6.0.0",
     "lint-staged": "^10.5.4",
