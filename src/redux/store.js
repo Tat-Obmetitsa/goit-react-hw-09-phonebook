@@ -13,6 +13,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { contactsReducer } from './contacts';
 import { authReducer } from './auth';
+import error from './error-reducer';
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -31,6 +32,7 @@ const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
     contacts: contactsReducer,
+    error: error
   },
   middleware,
 });

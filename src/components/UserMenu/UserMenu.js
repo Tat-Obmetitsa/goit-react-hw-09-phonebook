@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { authSelectors, authOperations } from '../../redux/auth';
-import defaultAvatar from './default-avatar.png';
+import defaultAvatar from '../../images/default-avatar.png';
 import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
 
 const s = {
