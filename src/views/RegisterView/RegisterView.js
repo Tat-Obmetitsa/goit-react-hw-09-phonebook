@@ -12,8 +12,6 @@ export default function RegisterView () {
 
   const dispatch = useDispatch();
   
-
-
   const handleChange = ({ target: { name, value } }) =>  {
     switch (name) {
       case 'name':
