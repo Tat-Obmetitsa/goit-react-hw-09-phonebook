@@ -27,7 +27,7 @@ export default function AddContact () {
     setName('');
     setNumber('');
   }, []);
-  
+
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
     const oldContact = contacts.find(
@@ -44,7 +44,6 @@ export default function AddContact () {
       } else {
        dispatch(contactsOperations.addContact({name, number}));
       }
-
     reset();
   }, [name, number, contacts, dispatch, reset]);
 
