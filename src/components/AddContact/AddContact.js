@@ -18,10 +18,20 @@ export default function AddContact () {
   const nameInputId = shortid.generate();
   const numberInputId = shortid.generate();
 
+  const handleChange = ({ target: { name, value } }) =>  {
+    switch (name) {
+      case 'name':
+        return setName(value);
+      case 'number':
+        return setNumber(value);
+      default:  console.warn(`Option ${name} is not processed!`);
+        return;
+    }
+  };
 
-  const handleChangeName =  useCallback((e) => setName(e.currentTarget.value), []);
+  // const handleChangeName =  useCallback((e) => setName(e.currentTarget.value), []);
 
-  const handleChangeNumber = useCallback((e) => setNumber(e.currentTarget.value), []);
+  // const handleChangeNumber = useCallback((e) => setNumber(e.currentTarget.value), []);
   
   const reset = useCallback(() => {
     setName('');
@@ -59,7 +69,7 @@ export default function AddContact () {
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
             value={name}
-            onChange={handleChangeName}
+            onChange={handleChange}
             id={nameInputId}
           />
         </label>
@@ -72,7 +82,7 @@ export default function AddContact () {
             value={number}
             pattern="(^\+?(\d{1,3})?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$)"
             title="Номер телефона должен состоять из минимум 9 цифр и может содержать цифры, пробелы, тире, пузатые скобки и может начинаться с +"
-            onChange={handleChangeNumber}
+            onChange={handleChange}
             id={numberInputId}
           />
         </label>
